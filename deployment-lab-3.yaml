@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-lab-3-deployment
+  namespace: lab-3
+  labels:
+    app: nginx
+spec:
+  replicas: 5
+  selector:
+     matchLabels:
+        app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx-lab-3-pod-v2
+        image: nginx 
